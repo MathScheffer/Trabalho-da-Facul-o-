@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Cadastro de currículo</title>
+	<meta type="description" content="Cadastro de currículo">
+	<meta charset="utf-8">
+	<style type="text/css">
+		#nome,#gen,#nasc,#nasc,#url,#end,.cidade,.gen{
+			width: 30vw;
+		}
+	</style>
+</head>
+<body>
+	<form name="Cadastro" method="POST" action="recebedados.php">
+
+		<fieldset>
+			<legend>Dados Pessoais</legend>
+			<label for="nome">Nome Completo - </label>
+			<br/>
+			<input type="text" id="nome"name="nome" placeholder="nome sobrenome" />
+
+			<br/><br/>
+			<label for="gen">Gênero</label>
+			<br/>
+			<input list="gen" name="gen" class="gen"placeholder="gênero">
+			<datalist name="gen" id="gen">
+				<option value="masc">Masculino</option>
+				<option value="fem">Feminino</option>
+				<option value="outro">Outro</option>
+				<option value="NID">Prefiro não declarar</option>
+			</datalist>
+
+			<br/><br/>
+			<label for="nasc">Data de Nascimento</label>
+			<br/>
+			<input type="date" name="nascimento" id="nasc">
+			<br/><br/>
+
+			<label for="email">Email</label>
+			<br/>
+			<input type="email" id="email" name="email" placeholder="nome@provedor.com" />
+			<br/><br/>
+
+			<label for="url">Site Pessoal</label>
+			<br/>
+			<input type="url" name="url" id="url" placeholder="http://www.ddd.com.br/aaa.zzz" />
+			<br/><br/>
+
+			<label for="end">Endereço</label><br>
+			<input type="text" id="end" name="endereco" required="" pattern="[A-Za-z ]{1,}[\,]{1}[0-9 ]{0,}[\,]{1}[a-zA-Z ]{1,}$" 
+			placeholder="Rua, número, bairro" title="rua, número e bairro">
+			<br/><br/>
+
+			<label for="cidade">Cidade</label>
+			<br>
+			<input list="cidades" name="cidades" class="cidade" placeholder="Cidades">
+			<datalist id=cidades>
+				<option value="alv">Alvorada</option>
+				<option value="can">Canoas</option>
+				<option value="cach">Cachoeirinha</option>
+				<option value="est">Esteio</option>
+				<option value="grav">Gravataí</option>
+				<option value="poa">Porto Alegre</option>
+			</datalist>
+			<br/><br/>
+			<label for="fone">Telefone para contato</label>
+			<br/>
+			<input type="tel" name="fone" pattern="[0-9]{3}[-][0-9]{5}[0-9]{4}" placeholder="ddd-999999999"
+			title="ex: 51-998935456">
+		</fieldset>
+		<fieldset>
+			<legend>Dados Profissionais</legend>
+			<label>Áreas de Atuação</label>
+			<br/>
+			<select name="ocup"id="ocup" size="3" multiple="multiple">
+				<option value="sis">Analista de Sistemas</option>
+				<option value="sup">Analista Suporte</option>
+				<option value="data">Analista de Dados</option>
+				<option value="redes">Analista de Redes</option>
+				<option value="sec">Analista de Segurança</option>
+			</select>
+			<br/><br/>
+
+			<label for="formacao">Formações</label>
+			<br/>
+			<input list="formacao" name="formacao">
+			<datalist id="formacao">
+				<option value="Análise e Desenvolvimento de Sistemas">
+				<option value="Ciência de Dados">
+				<option value="Segurança da Informação">
+				<option value="DBA">
+			</datalist>
+			<br/><br/>
+			<label for="hist">Breve história de sua caminhada profissional</label>
+			<br/>
+			<textarea cols="40" name="hist" id="hist"rows="5"></textarea>
+			<br><br>
+			<label for="curriculo">Insira seu currículo</label>
+			<input type="file" id="curriculo"name="curriculo" accept="image/*, application/pdf">
+			<br/><br/>
+
+			<label for="horas">Disponibilidade de Horas Semanais: </label>
+			<select id="horas" name="horas">
+				<option value="20">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+			</select>
+			<br/><br/>
+		</fieldset>
+		<fieldset>
+			<legend>Agendamento de Entrevista</legend>
+			<label for="data">Data: </label>
+			<input type="date" name="data" id="data">
+			<br>
+			<label for="hora">Hora:</label>
+			<input type="time" name="hora" id="hora">
+		</fieldset>
+		<input class="button" type="submit" value="Cadastrar"/>
+	</form>
+</body>
+</html>
