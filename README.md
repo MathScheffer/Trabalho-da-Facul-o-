@@ -1,2 +1,2 @@
-# Trabalho-da-Facul-o-
+# Trabalho-da-Facul
 Repositório GoHorse Total
